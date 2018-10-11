@@ -1,6 +1,6 @@
 {
   "name": "options-checker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "check mandatories options, even with conditionals",
   "main": "index.js",
   "scripts": {

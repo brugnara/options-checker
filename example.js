@@ -3,8 +3,6 @@
  * @ daniele@brugnara.me
  */
 
-'use strict'
-
 const optionsChecker = require('options-checker')
 const neededOptions = {
   action: ['addE', 'addV', 'drop'],
