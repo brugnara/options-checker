@@ -1,6 +1,9 @@
 # options-checker
 > 11/10/18
 
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Build Status](https://travis-ci.org/brugnara/options-checker.svg?branch=master)](https://travis-ci.org/brugnara/options-checker)
+
 ### the heck!?111
 
 Use this to check if all params are valid. All of them can be
