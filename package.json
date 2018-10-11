@@ -1,6 +1,6 @@
 {
   "name": "options-checker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "check mandatories options, even with conditionals",
   "main": "index.js",
   "scripts": {
@@ -27,5 +27,6 @@
   },
   "dependencies": {
     "debug": "4.1.0"
-  }
+  },
+  "runkitExampleFilename": "example.js"
 }
