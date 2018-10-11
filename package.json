@@ -1,0 +1,31 @@
+{
+  "name": "options-checker",
+  "version": "1.0.0",
+  "description": "check mandatories options, even with conditionals",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": "github.com/brugnara/options-checker.git",
+  "keywords": [
+    "options",
+    "check",
+    "mandatory"
+  ],
+  "author": "Daniele Brugnara <daniele@brugnara.me> (https://www.brugnara.me)",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "5.6.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-node": "7.0.1",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-standard": "4.0.0",
+    "mocha": "5.2.0",
+    "rndm": "1.2.0",
+    "should": "13.2.3"
+  },
+  "dependencies": {
+    "debug": "4.1.0"
+  }
+}
