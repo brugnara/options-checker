@@ -280,22 +280,27 @@ describe('# 01-base', function () {
 
   describe('function checks', function () {
     it('should call the callback with three arguments', function () {
+      let called = false
       const result = Module({
         action: 'test'
       }, {
         action: true,
         field () {
           Array.from(arguments).should.have.length(3)
+          called = true
           return true
         }
       })
 
       result.should.have.properties({
         valid: true
-      })
+      });
+
+      (called === true).should.be.true()
     })
 
     it('should call the callback and count the result', function () {
+      let called = false
       const field = rndm(19)
       const result = Module({
         field,
@@ -305,13 +310,16 @@ describe('# 01-base', function () {
         field (value, key) {
           value.should.equal(field)
           key.should.equal('field')
+          called = true
           return true
         }
       })
 
       result.should.have.properties({
         valid: true
-      })
+      });
+
+      (called === true).should.be.true()
     })
   })
 })
