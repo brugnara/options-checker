@@ -17,6 +17,8 @@ In this example, when `action` assumes the value `addE`,
 The example also shows that you can pass values you accept.
 `true` simply means the key is mandatory to exists.
 
+**NEW!** callback function support!
+
 ### example
 
 ```js
@@ -64,4 +66,19 @@ const result = optionsChecker(require('minimist')(process.argv), neededOptions)
 //   "option": "action",
 //   "validOptions": ["addE", "addV", "drop"]
 // }
+```
+
+### use with functions
+
+```js
+const field = rndm(19)
+const result = Module({
+    field,
+    action: 'test'
+  }, {
+  action: true,
+  field (value, key) {
+    return value === field && key === 'field'
+  }
+})
 ```

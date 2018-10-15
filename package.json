@@ -1,10 +1,10 @@
 {
   "name": "options-checker",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "check mandatories options, even with conditionals",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "DEBUG=* mocha test"
   },
   "repository": "github:brugnara/options-checker",
   "keywords": [

@@ -17,8 +17,8 @@ module.exports = function (_args, _options) {
     throw new Error('args and options should contain something')
   }
 
-  const args = JSON.parse(JSON.stringify(_args))
-  const options = JSON.parse(JSON.stringify(_options))
+  const args = Object.assign({}, _args)
+  const options = Object.assign({}, _options)
 
   if (options._if) {
     debug('navigating _if')
@@ -50,6 +50,9 @@ module.exports = function (_args, _options) {
   const keys = Object.keys(options)
   let len = keys.length
 
+  // keys are the fields to check
+  debug(keys)
+
   while (len--) {
     const key = keys[len]
     const option = options[key]
@@ -63,11 +66,23 @@ module.exports = function (_args, _options) {
       }
     }
 
-    if (option === true && (!args[key] || args[key] === true)) {
+    if (option === true && !args[key] && args[key] !== false) {
       debug(`${key} is mandatory`)
       return {
         valid: false,
         option: key
+      }
+    }
+
+    debug(typeof option)
+    if (typeof option === 'function') {
+      debug(`"${key}" has a function() validator`)
+      //
+      if (!option(args[key], key, Object.assign({}, args))) {
+        return {
+          valid: false,
+          option: key
+        }
       }
     }
   }

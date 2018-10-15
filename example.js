@@ -35,3 +35,14 @@ console.log(optionsChecker({
   action: 'junk',
   name: 'junk2'
 }, neededOptions))
+
+const field = Math.random()
+console.log(optionsChecker({
+  field,
+  action: 'test'
+}, {
+  action: true,
+  field (value, key) {
+    return value === field && key === 'field'
+  }
+}))
